@@ -1,7 +1,10 @@
 {
   "extends": ["standard", "prettier", "prettier/standard"],
-  "plugins": ["prettier"],
+  "plugins": [
+    "prettier"
+  ],
   "rules": {
+    "no-var": 2,
     "prettier/prettier": [
       "error",
       {
@@ -9,6 +12,7 @@
         "semi": false,
         "printWidth": 80
       }
-    ]
+    ],
+    "no-console": "off"
   }
 }
