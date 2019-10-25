@@ -67,10 +67,6 @@ svg {
   outline: white 1px dashed;
 }
 
-/* .graphic {
-  margin-bottom: 3rem;
-} */
-
 /* grid */
 .grid line {
   stroke: lightgrey;
@@ -766,7 +762,8 @@ div.container-full > div.control {
 /* graph-scroll.js version */
 .graphic__vis.graph-scroll-fixed {
 	position: fixed;
-	right: auto;
+  right: auto;
+  color: pink;
 }
 
 .graphic__vis.graph-scroll-below {

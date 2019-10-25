@@ -9,33 +9,7 @@
 import * as d3 from 'd3'
 import { graphScroll } from 'graph-scroll'
 
-function graphscroll() {
-  // select elements using d3 here since this is a d3 library...
-  const graphicEl = d3.select('.graphic')
-  const graphicVisEl = graphicEl.select('.graphic__vis')
-  const triggerEls = graphicEl.selectAll('.trigger')
-
-  // viewport height
-  const viewportHeight = window.innerHeight
-  const halfViewportHeight = viewportHeight / 2
-
-  // a global function creates and handles all the vis + updates
-  const graphic = createGraphic('.graphic')
-
-  // this is it, graph-scroll handles pretty much everything
-  // it will automatically add class names to the elements,
-  // so you just need to handle the fixed positions with css
-  graphScroll()
-    .container(graphicEl)
-    .graph(graphicVisEl)
-    .sections(triggerEls)
-    .offset(halfViewportHeight)
-    .on('active', function(i) {
-      graphic.update(i)
-    })
-}
-
-window.createGraphic = function(graphicSelector) {
+function createGraphic(graphicSelector) {
   const graphicEl = d3.select('.graphic')
   const graphicVisEl = graphicEl.select('.graphic__vis')
   const graphicProseEl = graphicEl.select('.graphic__prose')
@@ -200,6 +174,30 @@ window.createGraphic = function(graphicSelector) {
   return {
     update: update
   }
+}
+
+function graphscroll() {
+  // select elements using d3 here since this is a d3 library...
+  const graphicEl = d3.select('.graphic')
+  const graphicVisEl = graphicEl.select('.graphic__vis')
+  const triggerEls = graphicEl.selectAll('.trigger')
+  // viewport height
+  const viewportHeight = window.innerHeight
+  const halfViewportHeight = viewportHeight / 2
+  // a global function creates and handles all the vis + updates
+  const graphic = createGraphic('.graphic')
+
+  // this is it, graph-scroll handles pretty much everything
+  // it will automatically add class names to the elements,
+  // so you just need to handle the fixed positions with css
+  graphScroll()
+    .container(graphicEl)
+    .graph(graphicVisEl)
+    .sections(triggerEls)
+    .offset(halfViewportHeight)
+    .on('active', function(i) {
+      graphic.update(i)
+    })
 }
 
 graphscroll()
