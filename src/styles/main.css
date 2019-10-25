@@ -25,9 +25,9 @@ html {
 
 body {
   background: #111111;
-  width: 100vw;
+  /* width: 100vw; */
   overflow-x: hidden;
-  height: 100vw;
+  /* height: 100vw; */
   margin: 0;
   padding: 0;
   -webkit-print-color-adjust: exact;
@@ -62,9 +62,9 @@ body {
 
 svg {
   background: transparent;
-  display: block;
+  /* display: block; */
   margin: 0 auto;
-  outline: white 1px dashed;
+  /* outline: white 1px dashed; */
 }
 
 /* grid */
@@ -737,7 +737,7 @@ div.container-full > div.control {
 }
 
 .graphic__vis svg {
-	border: 1px dashed black;
+	border: 1px dashed white;
 	top: 50%;
 	position: relative;
 	-webkit-transform: translateY(-50%);
@@ -763,10 +763,11 @@ div.container-full > div.control {
 .graphic__vis.graph-scroll-fixed {
 	position: fixed;
   right: auto;
-  color: pink;
+  outline: red 10px solid;
 }
 
 .graphic__vis.graph-scroll-below {
 	top: auto;
-	bottom: 0;
+  bottom: 0;
+  outline: blue 10px solid;
 }
