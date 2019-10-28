@@ -3,6 +3,7 @@
  So here's a project of me ranting about exactly that!
  
  The project is housed over at https://sawyerclick.github.io/punk
+ The data and Jupyter Notebook can be found in the <a href='https://github.com/SawyerClick/punk/tree/master/src/data'>src folder</a>
  
  <hr>
  
