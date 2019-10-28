@@ -14,9 +14,7 @@
  (Hot tip: it's not great)
  
  ### Where is the data coming from?
- I grabbed them all using Spotify's API. I used it to grab each playlist, loop through the songs and then grab each songs characteristics and features, as well as some general information about the artists.
- <br>
- If you want to get technical, I looked up the 24 flagship playlists that Spotify curates.
+ I grabbed them all using Spotify's API. I used it to grab each playlist, loop through the songs and then grab each songs characteristics and features, as well as some general information about the artists. More specific, I looked up the 24 flagship playlists that Spotify curates.
  
  ### What analysis did you do?
 Spotify's API comes with some handy features and characteristics, so I mostly just did a decade-by-decade breakdown, as well as looking at the biggest players in the playlists.
