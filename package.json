@@ -45,9 +45,13 @@
   },
   "dependencies": {
     "@jsoma/parcel-plugin-handlebars": "^0.8.4",
+    "d3-format": "^1.4.1",
     "d3-svg-annotation": "^2.5.0",
     "d3-tip": "^0.9.1",
+    "data": "^0.6.1",
     "graph-scroll": "^1.0.2",
-    "module-name": "0.0.1-security"
+    "intersection-observer": "^0.7.0",
+    "module-name": "0.0.1-security",
+    "scrollama": "^2.1.2"
   }
 }

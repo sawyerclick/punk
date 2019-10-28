@@ -2,7 +2,6 @@ import * as d3 from 'd3'
 import d3Tip from 'd3-tip'
 import d3Annotation from 'd3-svg-annotation'
 d3.tip = d3Tip
-let audio = null
 
 const margin = { top: 30, left: 110, right: 180, bottom: 30 }
 const height = 270 - margin.top - margin.bottom
@@ -19,10 +18,6 @@ const svg = d3
 // Build your scales here
 const xPositionScale = d3
   .scaleLinear()
-  .domain([0, 1])
-  .range([0, width])
-const xPositionScale100 = d3
-  .scaleLinear()
   .domain([0, 100])
   .range([0, width])
 
@@ -33,13 +28,14 @@ const color = d3
   .domain(keys)
   .range(['#dbc269', '#5CDB95', '#C7493A', '#566fa3'])
 
-d3.csv(require('../data/spotify_punk_playlists.csv'))
+d3.csv(require('/data/spotify_punk_playlists.csv'))
   .then(ready)
   .catch(function(err) {
     console.log('Failed with', err)
   })
 
 function ready(datapoints) {
+  console.log(datapoints)
   d3.select('i').on('click', d => {
     if (audio) {
       audio.pause()
@@ -67,7 +63,7 @@ function ready(datapoints) {
   const makeAnnotations = d3Annotation
     .annotation()
     .accessors({
-      x: d => xPositionScale100(d.song_popularity),
+      x: d => xPositionScale(d.song_popularity),
       y: d => d.category
     })
     .annotations(annotations)
@@ -108,7 +104,7 @@ function ready(datapoints) {
     .enter()
     .append('circle')
     .attr('cy', height - 220)
-    .attr('cx', d => xPositionScale100(d.song_popularity))
+    .attr('cx', d => xPositionScale(d.song_popularity))
     .attr('fill', '#566fa3')
     .attr('fill-opacity', 0.5)
     .attr('r', 5)
@@ -157,7 +153,7 @@ function ready(datapoints) {
         .duration(0)
         .attr('r', 15)
         .attr('fill-opacity', 0.7)
-        .raise()
+      // .raise()
     })
     .on('mouseout', function() {
       svg
@@ -189,7 +185,7 @@ function ready(datapoints) {
   const xAxis = d3
     .axisBottom(xPositionScale)
     .ticks(5)
-    .tickFormat(d3.format('.0%'))
+    .tickFormat(d3.format(''))
   svg
     .append('g')
     .attr('class', 'axis x-axis axisWhite')

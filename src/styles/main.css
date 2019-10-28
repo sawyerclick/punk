@@ -545,6 +545,13 @@ section {
   /* height: 100vh; */
 }
 
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+
+}
+
 /* specific svgs */
 
 .offset {
@@ -553,12 +560,12 @@ section {
 }
 
 .infobox {
-  position: absolute;
-  display: inline;
-  margin-left: 1rem;
-  margin-right: auto;
+  /* position: relative; */
+  /* display: inline-flex; */
+  margin-left: 5rem;
+  /* margin-right: auto; */
   padding-top: 40px;
-  /* width: 100px; */
+  width: 100px;
 }
 
 h4 {
@@ -699,75 +706,71 @@ div.container-full > div.control {
   left: 0;
 }
 
-
-/* GRAPHIC CODE */
-.graphic {
-	width: 100%;
-	position: relative;
+/* Scrollama CODE */
+#scrolly {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem;
 }
 
-.graphic__prose {
-	width: 24rem;
+#scrolly > * {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
-.graphic__prose .trigger {
-	padding: 0;
-	margin: 0;
-	min-height: 240px;
-	
+
+article {
+  position: relative;
+  padding: 0 1rem;
+  max-width: 20rem;
 }
 
-.graphic__vis {
-	position: absolute;
-	top: 0;
-	margin-left: 30rem;
-	-webkit-transform: translate3d(0, 0, 0);
-	-moz-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
-	height: 100vh;
+figure {
+  position: -webkit-sticky;
+  position: sticky;
+  width: 100%;
+  margin: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  background-color: #8a8a8a;
 }
 
-.graphic__vis.is-fixed {
-	position: fixed;
+figure p {
+  text-align: center;
+  padding: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 8rem;
+  font-weight: 900;
+  color: #fff;
 }
 
-.graphic__vis.is-bottom {
-	top: auto;
-	bottom: 0;
+
+.step {
+  margin: 0 auto 2rem auto;
+  background-color: #3b3b3b;
+  color: #fff;
 }
 
-.graphic__vis svg {
-	border: 1px dashed white;
-	top: 50%;
-	position: relative;
-	-webkit-transform: translateY(-50%);
-	-moz-transform: translateY(-50%);
-	transform: translateY(-50%);
-
+.step:last-child {
+  margin-bottom: 0;
 }
 
-.item circle {
-	stroke: #666;
-	stroke-width: 1px;
-	fill: #fff;
+.step.is-active {
+  background-color: goldenrod;
+  color: #3b3b3b;
 }
 
-.item text {
-	fill: #666;
-	font-size: 12px;
-	text-anchor: middle;
-	alignment-baseline: middle;
-}
-
-/* graph-scroll.js version */
-.graphic__vis.graph-scroll-fixed {
-	position: fixed;
-  right: auto;
-  outline: red 10px solid;
-}
-
-.graphic__vis.graph-scroll-below {
-	top: auto;
-  bottom: 0;
-  outline: blue 10px solid;
+.step p {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.5rem;
 }
