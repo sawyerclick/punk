@@ -3,6 +3,8 @@
  So here's a project of me ranting about exactly that!
  
  The project is housed over at https://sawyerclick.github.io/punk
+ <br>
+ The data and Jupyter Notebook can be found in the <a href='https://github.com/SawyerClick/punk/tree/master/src/data'>src folder</a>
  
  <hr>
  
@@ -12,7 +14,7 @@
  (Hot tip: it's not great)
  
  ### Where is the data coming from?
- I grabbed them all using Spotify's API. I used it to grab each playlist, loop through the songs and then grab each songs characteristics and features, as well as some general information about the artists.
+ I grabbed them all using Spotify's API. I used it to grab each playlist, loop through the songs and then grab each songs characteristics and features, as well as some general information about the artists. More specific, I looked up the 24 flagship playlists that Spotify curates.
  
  ### What analysis did you do?
 Spotify's API comes with some handy features and characteristics, so I mostly just did a decade-by-decade breakdown, as well as looking at the biggest players in the playlists.
