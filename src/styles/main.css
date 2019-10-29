@@ -532,6 +532,7 @@ code {
   margin-right: auto;
 }
 
+
 .container-full {
   width: 95%;
   /* margin-top: 50px; */
@@ -549,7 +550,15 @@ section {
   display: flex;
   justify-content: center;
   align-items: top;
+  flex-basis: 120px;
+}
 
+.flex-small {
+  flex-shrink: 4
+}
+
+.flex-big {
+  flex-shrink: 1
 }
 
 /* specific svgs */
@@ -577,6 +586,13 @@ h4 {
 
 a {
   border-bottom: #c7493a 2px solid;
+}
+
+p.links {
+  position: absolute;
+  display: inline;
+  left: 15px;
+  bottom: 1px;
 }
 
 button.graph {
@@ -636,10 +652,10 @@ div.container-full > div.control {
   text-anchor: central;
   font-size: 22px;
   right: 2%;
-  top: 95%;
+  bottom: 15px;
   color: whitesmoke;
   position: fixed;
-  display: inline-block;
+  display: relative;
   z-index: 1;
 }
 

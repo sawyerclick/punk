@@ -91,7 +91,7 @@ function ready(datapoints) {
       return audio.play()
     })
 
-  d3.select('#popularity').on('click', function(d) {
+  d3.select('#popularity-button').on('click', function(d) {
     svg
       .selectAll('circle')
       .transition(d3.easeQuadInOut)
@@ -100,7 +100,7 @@ function ready(datapoints) {
       .attr('fill', '#566fa3')
   })
 
-  d3.select('#energy').on('click', function(d) {
+  d3.select('#energy-button').on('click', function(d) {
     svg
       .selectAll('circle')
       .transition(d3.easeQuadInOut)
@@ -109,7 +109,7 @@ function ready(datapoints) {
       .attr('fill', '#C7493A')
   })
 
-  d3.select('#danceability').on('click', function(d) {
+  d3.select('#danceability-button').on('click', function(d) {
     svg
       .selectAll('circle')
       .transition(d3.easeQuadInOut)
@@ -118,7 +118,7 @@ function ready(datapoints) {
       .attr('fill', '#5CDB95')
   })
 
-  d3.select('#valence').on('click', function(d) {
+  d3.select('#valence-button').on('click', function(d) {
     svg
       .selectAll('circle')
       .transition(d3.easeQuadInOut)
