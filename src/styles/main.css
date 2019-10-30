@@ -534,7 +534,7 @@ code {
 
 
 .container-full {
-  width: 95%;
+  width: 80%;
   /* margin-top: 50px; */
   margin-left: auto;
   margin-right: auto;
@@ -550,17 +550,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: top;
-  flex-basis: 120px;
 }
-
-.flex-small {
-  flex-shrink: 4
-}
-
-.flex-big {
-  flex-shrink: 1
-}
-
 /* specific svgs */
 
 .offset {
@@ -644,7 +634,7 @@ button.graph:active {
 div.container-full > div.control {
   margin-left: 2%;
   margin-right: auto;
-  margin-top: 50px;
+  margin-top: 20px;
   /* height: 30px; */
 }
 
@@ -742,6 +732,16 @@ article {
   position: relative;
   padding: 0 1rem;
   max-width: 20rem;
+}
+
+/* .svg-container {
+  display: inline;
+} */
+
+.sticky {
+  top: 100px;
+  position: -webkit-sticky;
+  position: sticky;
 }
 
 figure {

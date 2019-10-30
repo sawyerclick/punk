@@ -5,7 +5,7 @@ const height = 460 - margin.top - margin.bottom
 const width = 400 - margin.left - margin.right
 
 const svg = d3
-  .select('#PopAndEnergy')
+  .select('#DecadesInPlaylists')
   .append('svg')
   .attr('class', 'sticky')
   .attr('height', height + margin.top + margin.bottom)
@@ -15,19 +15,10 @@ const svg = d3
   .append('g')
   .attr('transform', `translate(${width / 2},${height / 2})`)
 
-const categories = {
-  energy: 100,
-  popularity: 100,
-  length: 4,
-  danceability: 100,
-  valence: 100,
-  loudness: -10
-}
-
 const radius = 150
 const radiusScale = d3
   .scaleLinear()
-  .domain([0, 50])
+  .domain([0, 750])
   .range([0, radius])
 
 const angleScale = d3.scaleBand().range([0, Math.PI * 2])
@@ -38,21 +29,20 @@ const colorScale = d3.scaleLinear().range(['#5580b6', '#C7493A'])
 const arc = d3
   .arc()
   .innerRadius(0)
-  .outerRadius(d => radiusScale(+d.popularity))
+  .outerRadius(d => radiusScale(+d.count))
   .startAngle(d => angleScale(d.decade) + angleScale.bandwidth())
   .endAngle(d => angleScale(d.decade))
 
-d3.csv(require('/data/song_features.csv'))
+d3.csv(require('/data/decades_in_playlists_counts.csv'))
   .then(ready)
   .catch(err => console.log('Failed with', err))
 
 function ready(datapoints) {
   console.log(datapoints)
-  // xPositionScale.domain(Object.keys(slicedData))
   angleScale.domain(datapoints.map(d => d.decade))
   // console.log(angleScale.domain())
-  const colorScaleDomain = datapoints.map(d => d.energy)
-  colorScale.domain(d3.extent(colorScaleDomain))
+  const colorScaleDomain = datapoints.map(d => d.artist_followers)
+  colorScale.domain([d3.min(colorScaleDomain), d3.max(colorScaleDomain)])
   // console.log(colorScale.domain())
   // radiusScale.domain(d3.extent(datapoints.map(d => d.energy)))
 
@@ -63,7 +53,7 @@ function ready(datapoints) {
     .append('path')
     .attr('d', arc)
     .attr('fill', function(d) {
-      return colorScale(+d.energy)
+      return colorScale(+d.artist_followers)
     })
     .attr('fill-opacity', 1)
     .attr('stroke', 'none')
@@ -92,7 +82,7 @@ function ready(datapoints) {
     .raise()
 
   console.log(radiusScale.domain()[1])
-  const bands = d3.range(0, radiusScale.domain()[1] + 10, 10)
+  const bands = d3.range(0, radiusScale.domain()[1] + 10, 250)
   svg
     .selectAll('.band')
     .data(bands)
@@ -111,18 +101,18 @@ function ready(datapoints) {
     .enter()
     .append('text')
     .text(function(d) {
-      if (d === 50) {
-        return d + '% popularity'
+      if (d === 750) {
+        return d + ' songs'
       } else {
-        return d + '%'
+        return null
       }
     })
     .attr('y', function(d) {
-      return -radiusScale(d + 5)
+      return -radiusScale(d + 75)
     })
-    .attr('dx', -12)
+    .attr('dx', -5)
     .attr('alignment-baseline', 'middle')
-    .attr('text-anchor', 'start')
+    .attr('text-anchor', 'middle')
     .style('font-size', 12)
     .style('fill', 'silver')
     .style('opacity', 0.5)
@@ -133,7 +123,7 @@ function ready(datapoints) {
 
   svg
     .append('text')
-    .text('High Energy, Low Popularity')
+    .text('New Artists, No Fans')
     .attr('x', 0)
     .attr('y', -radius - 60)
     .style('font-size', 20)
@@ -142,43 +132,4 @@ function ready(datapoints) {
     .style('fill-opacity', 0.9)
     .attr('text-anchor', 'middle')
     .attr('alignment-baseline', 'middle')
-
-  // function render() {
-  //   const svgContainer = svg.node().closest('div')
-  //   const svgWidth = svgContainer.offsetWidth
-
-  //   const actualSvg = d3.select(svg.node().closest('svg'))
-  //   actualSvg.attr('width', svgWidth)
-
-  //   const newWidth = svgWidth - margin.left - margin.right
-
-  //   xPositionScale.range([0, newWidth])
-
-  //   if (svgWidth < 400) {
-  //     xAxis.ticks(2)
-  //   } else if (svgWidth < 650) {
-  //     xAxis.ticks(4) // only have 3 ticks
-  //   } else {
-  //     xAxis.ticks(null) // resets it to the default number of ticks
-  //   }
-
-  //   svg.select('.x-axis').call(xAxis)
-
-  //   svg.selectAll('#energy').attr('cx', d => xPositionScale(d.energy))
-  //   svg
-  //     .selectAll('#popularity')
-  //     .attr('cx', d => xPositionScale(d.song_popularity))
-  //   svg.selectAll('#valence').attr('cx', d => xPositionScale(d.valence))
-  //   svg
-  //     .selectAll('#danceability')
-  //     .attr('cx', d => xPositionScale(d.danceability))
-  // }
-
-  // // When the window resizes, run the function
-  // // that redraws everything
-  // d3.select(window).on('resize', render)
-
-  // // And now that the page has loaded, let's just try
-  // // to do it once before the page has resized
-  // render()
 }

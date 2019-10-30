@@ -3,7 +3,7 @@ import d3Tip from 'd3-tip'
 import d3Annotation from 'd3-svg-annotation'
 d3.tip = d3Tip
 
-const margin = { top: 30, left: 115, right: 180, bottom: 30 }
+const margin = { top: 20, left: 115, right: 200, bottom: 30 }
 const height = 270 - margin.top - margin.bottom
 const width = 1100 - margin.left - margin.right
 
@@ -189,7 +189,7 @@ function ready(datapoints) {
   const xAxis = d3
     .axisBottom(xPositionScale)
     .ticks(5)
-    .tickFormat(d3.format(''))
+    .tickFormat(d => d + '%')
   svg
     .append('g')
     .attr('class', 'axis x-axis axisWhite')
@@ -238,7 +238,7 @@ function ready(datapoints) {
           height: -25
         },
         data: { category: height - 207, song_popularity: 76 },
-        dx: xPositionScale(32),
+        dx: xPositionScale(30),
         dy: 0,
         color: ['silver']
       }
