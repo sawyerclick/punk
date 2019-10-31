@@ -7,7 +7,6 @@ const width = 400 - margin.left - margin.right
 const svg = d3
   .select('#PopAndEnergy')
   .append('svg')
-  .attr('class', 'sticky')
   .attr('height', height + margin.top + margin.bottom)
   .attr('width', width + margin.left + margin.right)
   .append('g')
@@ -46,19 +45,19 @@ d3.csv(require('/data/song_features.csv'))
   .then(ready)
   .catch(err => console.log('Failed with', err))
 
-function ready(datapoints) {
-  console.log(datapoints)
+function ready(songFeatures) {
+  console.log(songFeatures)
   // xPositionScale.domain(Object.keys(slicedData))
-  angleScale.domain(datapoints.map(d => d.decade))
+  angleScale.domain(songFeatures.map(d => d.decade))
   // console.log(angleScale.domain())
-  const colorScaleDomain = datapoints.map(d => d.energy)
+  const colorScaleDomain = songFeatures.map(d => d.energy)
   colorScale.domain(d3.extent(colorScaleDomain))
   // console.log(colorScale.domain())
-  // radiusScale.domain(d3.extent(datapoints.map(d => d.energy)))
+  // radiusScale.domain(d3.extent(songFeatures.map(d => d.energy)))
 
   svg
     .selectAll('.features-chart')
-    .data(datapoints)
+    .data(songFeatures)
     .enter()
     .append('path')
     .attr('d', arc)
@@ -91,8 +90,8 @@ function ready(datapoints) {
     .style('fill', 'silver')
     .raise()
 
-  console.log(radiusScale.domain()[1])
   const bands = d3.range(0, radiusScale.domain()[1] + 10, 10)
+  
   svg
     .selectAll('.band')
     .data(bands)
@@ -127,9 +126,6 @@ function ready(datapoints) {
     .style('fill', 'silver')
     .style('opacity', 0.5)
     .lower()
-
-  // svg.append('text').text(datapoints)
-  // console.log(Object.keys(datapoints[0])[1])
 
   svg
     .append('text')

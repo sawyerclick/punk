@@ -1,17 +1,37 @@
-  <section id='4'>
-    <div class='container'>
-      <h3 class='glitch-subhead' data-text="Slow Down, Speed Racer">Slow Down, Speed Racer</h3>
-      <p class='body-text'>As decades have passed, the genre has increasingly lost its appeal, mostly because of Hip Hop and bubblegum pop's dominance in the 90's and 00's. Across each decade represented in the playlists, which date back to the predeccesors of the 1960's, I grabbed the mean popularity and energy to show how much the genre has changed.</p>
-      <div class='flex-container'>
-        <div>
-          <p class='body-text'>The peak in the 80's stems from only a few dozen songs from the decade being sprinkled into the playlists. With the average song popularity well above the rest of the decades, the energy was pretty medium compared to the other decades.</p>
-          <p class='body-text'>The genre's skyrocketing population and energy led to what Spotify declares a stalwart </p>
-        </div>
-        <div id='DecadesInPlaylists'></div>
-        <div id='PopAndEnergy'></div>
-      </div>
-    </div>
-  </section>
+	<section id='4'>
+	<div class='container scrollytelling'>
+		<h3 class='glitch-subhead' data-text="Slow Down, Speed Racer">Slow Down, Speed Racer</h3>
+		<p class='body-text'>As decades have passed, the genre has increasingly lost its appeal, mostly because of Hip Hop and bubblegum pop's dominance in the 90's and 00's. Across each decade represented in the playlists, which date back to the predeccesors of the 1960's, I grabbed the mean popularity and energy to show how much the genre has changed.</p>
+		
+		<div class='chart' id='DecadesInPlaylists'></div>
 
-<script src='/scripts/decades-energy-pop.js'></script>
-<script src='/scripts/decades_in_playlists.js'></script>
+		<div class='container-med steps'>
+			<div class="step" id='decade-count-step'>
+				<h4 class='chart-head'>New Artists, Few Followers</h4>
+				<p class='body-text'>The peak in the 80's stems from only a few dozen songs from the decade being sprinkled into the playlists. </p>
+				<div id="decades-legend"></div>
+			</div>
+
+			<div class='step'>
+				<p class='body-text'>More songs from each decade appear in the playlists as they get closer to present day, starting with nearly none from the 60's and growing each decade to nearly 700 from 2019 alone.</p>
+				<p class='body-text'>Spotify is spending less time giving a platform to the genre's greats, gatekeeping a generation of listeners from discovering the genre's past.</p>
+			</div>
+
+			<div class='step' id='decade-energy-step'>
+				<p class='body-text'>
+				With the average song popularity well above the rest of the decades, the energy was pretty medium compared to the other decades.The genre's skyrocketing population and energy led to what Spotify declares a stalwart </p>
+			</div>
+
+			<div class='step'>
+				<p class='body-text'>The genre's skyrocketing population and energy led to what Spotify declares a stalwart </p>
+			</div>    
+		</div>
+		
+		
+	</div>
+	</section>
+
+	{{!-- <script src='/scripts/decades-energy-pop.js'></script> --}}
+	<script src='/scripts/decades_in_playlists.js'></script>
+	<script src='/scripts/scrollytelling.js'></script>
+	<script src='/scripts/decades-legend.js'></script>
