@@ -3,7 +3,7 @@ import d3Tip from 'd3-tip'
 import d3Annotation from 'd3-svg-annotation'
 d3.tip = d3Tip
 
-const margin = { top: 20, left: 115, right: 200, bottom: 30 }
+const margin = { top: 20, left: 120, right: 200, bottom: 30 }
 const height = 270 - margin.top - margin.bottom
 const width = 1100 - margin.left - margin.right
 
@@ -214,6 +214,8 @@ function ready(datapoints) {
     } else {
       xAxis.ticks(null) // resets it to the default number of ticks
     }
+
+    xAxis.ticks(svgWidth / 200)
 
     svg.select('.x-axis').call(xAxis)
 

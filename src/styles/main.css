@@ -7,7 +7,11 @@
 html {
   scroll-behavior: smooth;
 }
-/* scrollbar */
+
+/* ::-webkit-scrollbar {
+  display: hidden;
+} */
+scrollbar
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
@@ -107,12 +111,17 @@ a:hover {
   text-decoration: none;
   color: white;
 }
+
 p,
 code,
 table {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 400;
+}
+
+text {
+  font-family: "Montserrat", sans-serif;
 }
 
 #body {
@@ -507,6 +516,7 @@ h3 {
 p {
   color: whitesmoke;
 }
+
 code {
   background: #689775;
   color: #111111;
@@ -523,8 +533,8 @@ code {
 .container-med {
   width: 70%;
   /* margin-top: 50px; */
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .container-med.graphic {
@@ -539,6 +549,7 @@ code {
   margin-left: auto;
   margin-right: auto;
 }
+
 
 section {
   background: #111111;
@@ -582,7 +593,11 @@ p.links {
   position: absolute;
   display: inline;
   left: 15px;
-  bottom: 1px;
+  bottom: 0px;
+}
+
+p.teaser {
+  margin-top: 0;
 }
 
 button.graph {
@@ -716,4 +731,50 @@ div.container-full > div.control {
   position: absolute;
   top: 10px;
   left: 0;
+}
+
+@media (max-width: 900px) {
+  .full-container {
+    /* width: 100%; */
+    margin-left: 0;
+    margin-right: 0;
+  }
+  /* .full-container > svg {
+    width: 100%;
+  } */
+}
+
+@media (max-width: 500px) {
+  .full-screen {
+    margin-top: 80%;
+  }
+  .glitch, .glitch:before, .glitch:after {
+    width: 100%;
+    font-size: 48px;
+    overflow: hidden;
+  }
+  .glitch {
+    position: relative;
+  }
+  .glitch:before {
+    left: 1px;
+  }
+  .glitch:after {
+    left: -1px;
+  }
+  .glitch-subhead, .glitch-subhead:before, .glitch-subhead:after {
+    width: 90%;
+    font-size: 48px;
+    overflow: hidden;
+  }
+  p.teaser {
+    margin: 0 auto;
+  }
+  p.byline {
+    margin: 10px auto;
+  }
+  p.body-text, .glitch-subhead {
+    margin: 15px 10px;
+    word-wrap: break-word;
+  }
 }

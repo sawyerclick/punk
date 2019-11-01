@@ -1,6 +1,6 @@
 import * as d3 from 'd3'
 
-const margin = { top: 0, left: 20, right: 20, bottom: 20 }
+const margin = { top: 50, left: 20, right: 20, bottom: 20 }
 const height = 550 - margin.top - margin.bottom
 const width = 500 - margin.left - margin.right
 
@@ -21,7 +21,7 @@ const radiusScale = d3
   .range([0, radius])
 
 const angleScale = d3.scaleBand().range([0, Math.PI * 2])
-const colorScale = d3.scaleLinear().range(['#5580b6', '#C7493A'])
+const colorScale = d3.scaleLinear().range(['#5580b6', 'indianred'])
 
 const arc = d3
   .arc()
@@ -45,10 +45,10 @@ Promise.all([
   })
 
 function ready([decadeCount, songFeatures]) {
-  console.log(decadeCount)
+  // console.log(decadeCount)
+
   angleScale.domain(decadeCount.map(d => d.decade))
-  // console.log(angleScale.domain())
-  const colorScaleDomain = decadeCount.map(d => d.artist_followers)
+  const colorScaleDomain = decadeCount.map(d => +d.artist_followers)
   colorScale.domain([d3.min(colorScaleDomain), d3.max(colorScaleDomain)])
 
   svg
@@ -93,7 +93,7 @@ function ready([decadeCount, songFeatures]) {
     radiusScale.domain()[1] + 10,
     radiusScale.domain()[1] / 3
   )
-  // console.log(bands)
+
   svg
     .selectAll('.band')
     .data(bands)
@@ -106,7 +106,6 @@ function ready([decadeCount, songFeatures]) {
     .style('fill', 'none')
     .style('stroke', 'gray')
     .style('stroke-dasharray', '10,15')
-
     .lower()
 
   svg
@@ -143,14 +142,14 @@ function ready([decadeCount, songFeatures]) {
 
     // reset scales
     radiusScale.domain([0, 750])
-    const colorScaleDomain = decadeCount.map(d => d.artist_followers)
+    const colorScaleDomain = decadeCount.map(d => +d.artist_followers)
     colorScale.domain(d3.extent(colorScaleDomain))
+    // console.log(d3.extent(colorScaleDomain))
 
     // reset the arc
     arc.outerRadius(d => radiusScale(+d.count))
 
-    // console.log(songFeatures)
-
+    // redraw everything but the bands and decade labels
     svg
       .selectAll('.decade-wedge')
       .data(decadeCount)
@@ -165,20 +164,15 @@ function ready([decadeCount, songFeatures]) {
       radiusScale.domain()[1] + 10,
       radiusScale.domain()[1] / 3
     )
+
     svg
       .selectAll('.band')
       .data(bands)
-      .transition()
-      .duration(800)
-      .ease(d3.easeQuadInOut)
       .attr('r', d => radiusScale(d))
 
     svg
       .selectAll('.band-text')
       .data(bands)
-      .transition()
-      .duration(800)
-      .ease(d3.easeQuadInOut)
       .text(function(d) {
         if (d === 750) {
           return d + ' songs'
@@ -217,23 +211,18 @@ function ready([decadeCount, songFeatures]) {
       radiusScale.domain()[1] + 10,
       radiusScale.domain()[1] / 3
     )
+
     svg
       .selectAll('.band')
-      .data(d3.range(bands))
-      .transition()
-      .duration(800)
-      .ease(d3.easeQuadInOut)
+      .data(bands)
       .attr('r', d => radiusScale(d))
 
     svg
       .selectAll('.band-text')
       .data(bands)
-      .transition()
-      .duration(800)
-      .ease(d3.easeQuadInOut)
       .text(function(d) {
         if (d === 50) {
-          return d3.format('.1f')(d) + '% popularity'
+          return d3.format('.0f')(d) + '% popularity'
         } else {
           return d3.format('.1f')(d) + '%'
         }
@@ -244,6 +233,7 @@ function ready([decadeCount, songFeatures]) {
   })
 
   function render() {
+    // standardize the transitions
     const t = d3
       .transition()
       .duration(800)
@@ -251,21 +241,21 @@ function ready([decadeCount, songFeatures]) {
 
     const svgContainer = svg.node().closest('div')
     const svgWidth = svgContainer.offsetWidth
-    // console.log(svgWidth)
-    // Do you want it to be full height? Pick one of the two below
-    const svgHeight = height + margin.top + margin.bottom
-    // const svgHeight = window.innerHeight
+
+    const svgHeight = svgContainer.offsetHeight
 
     const actualSvg = d3.select(svg.node().closest('svg'))
     actualSvg.attr('width', svgWidth).attr('height', svgHeight)
 
     const newWidth = svgWidth - margin.left - margin.right
 
+    svg.attr('transform', `translate(${newWidth / 2},${svgHeight / 3})`)
+
     function newRadius() {
       if (window.innerWidth > 900) {
         return newWidth / 2
-      } else if (window.innerWidth < 500) {
-        return newWidth / 3
+      } else if (window.innerWidth < 550) {
+        return newWidth / 2.22
       } else {
         return newWidth / 3.5
       }
@@ -279,19 +269,12 @@ function ready([decadeCount, songFeatures]) {
       .selectAll('.decade-wedge')
       .transition()
       .attr('d', arc)
-
     svg.selectAll('.band').attr('r', d => radiusScale(d))
-
     svg.selectAll('.band-text').attr('y', d => -radiusScale(d))
-
     svg.selectAll('.decade-labels').attr('y', -newRadius() / 2)
   }
 
-  // When the window resizes, run the function
-  // that redraws everything
   window.addEventListener('resize', render)
 
-  // And now that the page has loaded, let's just try
-  // to do it once before the page has resized
   render()
 }

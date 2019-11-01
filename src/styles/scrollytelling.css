@@ -63,7 +63,7 @@ Begin responsive design and scrollytelling
   margin: 50px auto;
   margin-bottom: 80vh;
   padding: 30px;
-  background: rgba(105, 103, 103, 0.2);
+  background: rgba(105, 103, 103, 0.85);
   color: white;
   pointer-events: auto;
 }
@@ -96,6 +96,21 @@ Begin responsive design and scrollytelling
   }
   .scrollytelling .chart {
       margin-right: 0;
+  }
+
+  .container-med {
+    margin-left: 0;
+    margin-right: 0;
+  } 
+  
+  p.body-text, .glitch-subhead {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .step > p.body-text {
+    margin: 20px 0px;
+    flex-shrink: 0;
   }
 }
 
