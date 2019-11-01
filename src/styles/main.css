@@ -686,7 +686,8 @@ div.container-full > div.control {
 }
 
 .chart-head {
-  font-size: 28px;
+  font-family: "Lato", sans-serif;
+  font-size: 42px;
   font-weight: 800;
   color: gainsboro;
 }
@@ -733,15 +734,23 @@ div.container-full > div.control {
   left: 0;
 }
 
-@media (max-width: 900px) {
-  .full-container {
-    /* width: 100%; */
-    margin-left: 0;
-    margin-right: 0;
+
+
+@media (max-width: 720px) {
+  .glitch, .glitch:before, .glitch:after {
+    width: 500px;
+    font-size: 68px;
+    overflow: hidden;
   }
-  /* .full-container > svg {
-    width: 100%;
-  } */
+  .glitch {
+    position: relative;
+  }
+  .glitch:before {
+    left: 1px;
+  }
+  .glitch:after {
+    left: -1px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -763,8 +772,8 @@ div.container-full > div.control {
     left: -1px;
   }
   .glitch-subhead, .glitch-subhead:before, .glitch-subhead:after {
-    width: 90%;
-    font-size: 48px;
+    width: 95%;
+    font-size: 38px;
     overflow: hidden;
   }
   p.teaser {
@@ -778,3 +787,12 @@ div.container-full > div.control {
     word-wrap: break-word;
   }
 }
+
+@media (max-width: 900px) {
+  .full-container {
+    /* width: 100%; */
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+

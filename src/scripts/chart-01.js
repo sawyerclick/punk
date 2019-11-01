@@ -258,11 +258,8 @@ function ready(datapoints) {
     svg.call(makeAnnotations)
   }
 
-  // When the window resizes, run the function
-  // that redraws everything
+  // When the window resizes, run the function that redraws everything
   d3.select(window).on('resize', render)
 
-  // And now that the page has loaded, let's just try
-  // to do it once before the page has resized
   render()
 }
