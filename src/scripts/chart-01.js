@@ -3,6 +3,8 @@ import d3Tip from 'd3-tip'
 import d3Annotation from 'd3-svg-annotation'
 d3.tip = d3Tip
 
+let audio = null
+
 const margin = { top: 20, left: 130, right: 30, bottom: 30 }
 const height = 270 - margin.top - margin.bottom
 const width = 1100 - margin.left - margin.right
