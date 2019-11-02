@@ -40,12 +40,12 @@ svg
   .style('fill', 'url(#gradient)')
   .attr('transform', 'translate(0,10)')
 
-const xPositionScale = d3.scaleLinear().domain([138480, 1620189])
+const xPositionScale = d3.scaleLinear().domain([6800, 131000])
 
 const xAxis = d3
   .axisBottom()
   .scale(xPositionScale)
-  .ticks(4)
+  .tickValues([40000, 80000, 120000])
   .tickFormat(d3.format('.2s'))
 
 svg

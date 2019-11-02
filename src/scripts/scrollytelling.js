@@ -3,7 +3,7 @@ import * as d3 from 'd3'
 
 enterView({
   selector: '.step',
-  offset: 0.4,
+  offset: 0.3,
   enter: function(element) {
     element.classList.add('entered')
 

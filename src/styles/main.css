@@ -205,8 +205,8 @@ text {
 .glitch:after {
   content: attr(data-text);
   position: absolute;
-  left: 29px;
-  text-shadow: -1px 0 red;
+  left: 30px;
+  text-shadow: -2px 0 red;
   top: 0;
   color: white;
   background: #111111;
@@ -285,8 +285,8 @@ text {
 .glitch:before {
   content: attr(data-text);
   position: absolute;
-  left: 29px;
-  text-shadow: 1px 0 blue;
+  left: 32px;
+  text-shadow: 2px 0 blue;
   top: 0;
   color: white;
   background: #111111;
@@ -544,10 +544,10 @@ code {
 
 
 .container-full {
-  width: 80%;
+  width: 95%;
   /* margin-top: 50px; */
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 
@@ -686,8 +686,8 @@ div.container-full > div.control {
 }
 
 .chart-head {
-  font-family: "Lato", sans-serif;
-  font-size: 42px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 28px;
   font-weight: 800;
   color: gainsboro;
 }
@@ -754,9 +754,6 @@ div.container-full > div.control {
 }
 
 @media (max-width: 500px) {
-  .full-screen {
-    margin-top: 80%;
-  }
   .glitch, .glitch:before, .glitch:after {
     width: 100%;
     font-size: 48px;
@@ -788,11 +785,4 @@ div.container-full > div.control {
   }
 }
 
-@media (max-width: 900px) {
-  .full-container {
-    /* width: 100%; */
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
 

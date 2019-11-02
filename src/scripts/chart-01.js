@@ -3,7 +3,7 @@ import d3Tip from 'd3-tip'
 import d3Annotation from 'd3-svg-annotation'
 d3.tip = d3Tip
 
-const margin = { top: 20, left: 120, right: 200, bottom: 30 }
+const margin = { top: 20, left: 130, right: 30, bottom: 30 }
 const height = 270 - margin.top - margin.bottom
 const width = 1100 - margin.left - margin.right
 
@@ -69,7 +69,7 @@ function ready(datapoints) {
     .annotations(annotations)
     .notePadding(10)
 
-  svg.call(makeAnnotations)
+  // svg.call(makeAnnotations)
 
   svg
     .selectAll('labels')
@@ -210,9 +210,9 @@ function ready(datapoints) {
     if (svgWidth < 400) {
       xAxis.ticks(2)
     } else if (svgWidth < 650) {
-      xAxis.ticks(4) // only have 3 ticks
+      xAxis.ticks(4)
     } else {
-      xAxis.ticks(null) // resets it to the default number of ticks
+      xAxis.ticks(null)
     }
 
     xAxis.ticks(svgWidth / 200)
@@ -236,11 +236,11 @@ function ready(datapoints) {
         },
         type: d3Annotation.annotationCalloutRect,
         subject: {
-          width: 25,
+          width: 35,
           height: -25
         },
         data: { category: height - 207, song_popularity: 76 },
-        dx: xPositionScale(30),
+        dx: newWidth / 3.3,
         dy: 0,
         color: ['silver']
       }
@@ -255,7 +255,7 @@ function ready(datapoints) {
       .annotations(annotations)
       .notePadding(10)
 
-    svg.call(makeAnnotations)
+    // svg.call(makeAnnotations)
   }
 
   // When the window resizes, run the function that redraws everything
