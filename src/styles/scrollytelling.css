@@ -34,14 +34,14 @@ Begin responsive design and scrollytelling
 
 /* The bigger 'flex-grow' the more space it takes up */
 .scrollytelling > .chart {
-  flex-grow: 3;
+  flex-grow: 1.5;
   overflow: hidden;
 }
 
 .scrollytelling .chart {
   margin-right: 15px;
   position: sticky;
-  top: 0;
+  top: 120px;
   z-index: 0;
   height: 100vh;
   display: flex;

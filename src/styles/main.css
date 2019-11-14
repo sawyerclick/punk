@@ -38,6 +38,12 @@ body {
   scroll-behavior: smooth;
 }
 
+.chart1-labels {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
 /* home page */
 .container-dark {
   overflow-y: hidden;
@@ -128,6 +134,10 @@ text {
   margin-top: 3rem;
 }
 
+.homepage {
+  text-align: center;
+}
+
 /* home page text & effect */
 .glitch {
   color: white;
@@ -205,8 +215,8 @@ text {
 .glitch:after {
   content: attr(data-text);
   position: absolute;
-  left: 30px;
-  text-shadow: -2px 0 red;
+  left: 29px;
+  text-shadow: -1px 0 red;
   top: 0;
   color: white;
   background: #111111;
@@ -285,8 +295,8 @@ text {
 .glitch:before {
   content: attr(data-text);
   position: absolute;
-  left: 32px;
-  text-shadow: 2px 0 blue;
+  left: 29px;
+  text-shadow: 1px 0 blue;
   top: 0;
   color: white;
   background: #111111;
@@ -296,6 +306,7 @@ text {
   width: auto;
   align-content: center;
 }
+
 
 p.body-text {
   margin-left: 5px;
@@ -533,8 +544,8 @@ code {
 .container-med {
   width: 70%;
   /* margin-top: 50px; */
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .container-med.graphic {
@@ -546,8 +557,8 @@ code {
 .container-full {
   width: 95%;
   /* margin-top: 50px; */
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -597,7 +608,8 @@ p.links {
 }
 
 p.teaser {
-  margin-top: 0;
+  margin: 0 auto;
+  text-align: center;
 }
 
 button.graph {
@@ -719,24 +731,9 @@ div.container-full > div.control {
   pointer-events: none;
 }
 
-.svg-container {
-  display: inline-block;
-  position: relative;
-  width: 100%;
-  /* padding-bottom: 100%; // aspect ratio//  */
-  vertical-align: top;
-  overflow: hidden;
-}
-.svg-content-responsive {
-  display: inline-block;
-  position: absolute;
-  top: 10px;
-  left: 0;
-}
 
 
-
-@media (max-width: 720px) {
+@media (max-width: 750px) {
   .glitch, .glitch:before, .glitch:after {
     width: 500px;
     font-size: 68px;
