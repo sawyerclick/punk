@@ -314,6 +314,10 @@ p.body-text {
   line-height: 22px;
 }
 
+span {
+  font-size: 14px;
+}
+
 /* subhead glitching */
 h3 {
   color: whitesmoke;
@@ -748,6 +752,9 @@ div.container-full > div.control {
   .glitch:after {
     left: -1px;
   }
+  .container-med {
+    width: 100%;
+  }
 }
 
 @media (max-width: 500px) {
@@ -779,6 +786,9 @@ div.container-full > div.control {
   p.body-text, .glitch-subhead {
     margin: 15px 10px;
     word-wrap: break-word;
+  }
+  span {
+    font-size: 13dpx;
   }
 }
 

@@ -257,7 +257,7 @@ function ready([decadeCount, songFeatures]) {
       } else if (window.innerWidth < 550) {
         return newWidth / 2.22
       } else {
-        return newWidth / 3.5
+        return newWidth / 2
       }
     }
 

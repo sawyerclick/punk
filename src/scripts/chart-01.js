@@ -6,7 +6,7 @@ d3.tip = d3Tip
 
 let audio = null
 
-const margin = { top: 50, left: 130, right: 130, bottom: 40 }
+const margin = { top: 50, left: 130, right: 130, bottom: 60 }
 const height = 600 - margin.top - margin.bottom
 const width = 750 - margin.left - margin.right
 
@@ -32,7 +32,7 @@ const xPositionScale = d3
 
 const yPositionScale = d3
   .scaleOrdinal()
-  .range([height * 0.3, height * 0.45, height * 0.6, height * 0.7])
+  .range([height * 0.3, height * 0.45, height * 0.6, height * 0.75])
 
 const colorScale = d3
   .scaleOrdinal()
@@ -174,20 +174,6 @@ function ready(datapoints) {
     .attr('text-anchor', 'middle')
     .attr('alignment-baseline', 'middle')
 
-  // svg
-  //   .selectAll('labels')
-  //   .data(keys)
-  //   .enter()
-  //   .append('text')
-  //   .attr('class', 'labels')
-  //   .text(d => d)
-  //   .attr('y', -60)
-  //   .style('fill', d => colorScaleKeys(d))
-  //   .attr('text-anchor', 'middle')
-  //   .attr('alignment-baseline', 'middle')
-  //   .style('font-size', 16)
-  //   .style('font-weight', 600)
-
   function render() {
     const svgContainer = svg.node().closest('div')
     const svgWidth = svgContainer.offsetWidth
@@ -195,25 +181,21 @@ function ready(datapoints) {
     const actualSvg = d3.select(svg.node().closest('svg'))
     actualSvg.attr('width', svgWidth)
 
-    const newWidth = svgWidth - margin.right - margin.left
-
-    xPositionScale.range([0, newWidth])
-
-    // divider line
-    svg
-      .select('.even-line')
-      .attr('x1', newWidth / 2)
-      .attr('x2', newWidth / 2)
-
-    // svg.selectAll('.labels').attr('x', function(d, i) {
-    //   return newWidth / 2 + i * 50
-    // })
-
-    // circles
-    svg.selectAll('circle').attr('cx', d => xPositionScale(+d.amount))
-
     // fix label positioning + run simulation if bigger
     if (svgWidth > 550) {
+      const newWidth = svgWidth - margin.right - margin.left
+
+      xPositionScale.range([0, newWidth])
+
+      // divider line
+      svg
+        .select('.even-line')
+        .attr('x1', newWidth / 2)
+        .attr('x2', newWidth / 2)
+
+      // circles
+      svg.selectAll('circle').attr('cx', d => xPositionScale(+d.amount))
+
       // annotations
       svg.select('.less').attr('x', xPositionScale(38))
       svg.select('.even').attr('x', xPositionScale(50))
@@ -222,10 +204,30 @@ function ready(datapoints) {
       // the force is with me
       simulation.nodes(merged).on('tick', ticked)
     } else {
+      // margin.right = 20
+      // margin.left = 20
+      const newWidth = svgWidth - margin.right - margin.left
+
+      xPositionScale.range([0, newWidth])
+
+      // divider line
+      svg
+        .select('.even-line')
+        .attr('x1', newWidth / 2)
+        .attr('x2', newWidth / 2)
+
+      // circles
+      svg
+        .selectAll('circle')
+        .attr('cx', d => xPositionScale(+d.amount))
+        .attr('r', 1)
       // annotations
-      svg.select('.less').attr('x', xPositionScale(20))
+      svg.select('.less').attr('x', xPositionScale(-20))
       svg.select('.even').attr('x', xPositionScale(50))
-      svg.select('.more').attr('x', xPositionScale(80))
+      svg.select('.more').attr('x', xPositionScale(120))
+
+      simulation.force('collide', d3.forceCollide(1))
+      simulation.nodes(merged).on('tick', ticked)
     }
   }
 
