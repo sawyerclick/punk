@@ -5,7 +5,7 @@ const width = 550 - margin.left - margin.right
 const height = 350 - margin.top - margin.bottom
 
 const svg = d3
-  .select('#chart2')
+  .select('#artist-counts')
   .append('svg')
   .style('margin-left', '12%')
   .style('margin-right', '5%')

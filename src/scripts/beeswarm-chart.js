@@ -1,5 +1,4 @@
 import * as d3 from 'd3'
-// import Force from 'd3-force'
 import d3Tip from 'd3-tip'
 import d3Annotation from 'd3-svg-annotation'
 d3.tip = d3Tip
@@ -11,7 +10,7 @@ const height = 600 - margin.top - margin.bottom
 const width = 750 - margin.left - margin.right
 
 const svg = d3
-  .select('#chart1')
+  .select('#beeswarm')
   .append('svg')
   .attr('height', height + margin.top + margin.bottom)
   .attr('width', width + margin.left + margin.right)
@@ -45,7 +44,7 @@ d3.csv(require('/data/spotify_punk_playlists.csv'))
   })
 
 function ready(datapoints) {
-  d3.select('i').on('click', d => {
+  d3.select('i').on('click', function() {
     if (audio) {
       audio.pause()
     }

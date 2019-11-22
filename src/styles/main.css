@@ -574,7 +574,7 @@ section {
 
 .flex-container {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: top;
 }
 /* specific svgs */
@@ -624,7 +624,7 @@ button.graph {
   margin-right: 10px;
   text-decoration: none;
   background: whitesmoke;
-  color: #111111;
+  color: #444;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -638,7 +638,7 @@ button.graph {
 
 button.graph:hover,
 button.graph:focus {
-  background: -2px 3px rgb(240, 226, 77);
+  color: #111;
   box-shadow: -2px 3px rgba(255, 17, 120, 0.651);
   outline: none;
 }
@@ -655,10 +655,10 @@ button.graph:active {
 }
 
 .control {
-  margin-left: 0;
+  margin-left: 10px;
   margin-right: auto;
-  margin-top: 30px;
-  /* height: 50px; */
+  margin-top: 15px;
+  margin-bottom: 15px;
   vertical-align: bottom;
 }
 
@@ -735,6 +735,60 @@ div.container-full > div.control {
   pointer-events: none;
 }
 
+#div-chart {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  position: static;
+  /* width: 100%; */
+}
+
+#waffle {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 95%;
+  height: 200px;
+}
+
+.block {
+  width: 2%;
+  height: 5%;
+  margin: 2px;
+}
+
+.div-block {
+  width: 10px;
+  height: 10px;
+  margin: 2px;
+  /* border-radius: 50%; */
+  background-color: #fe4a49;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0.5rem;
+}
+
+.genre-count {
+  display: inline-block;
+  margin: 0;
+  margin-left: 5px;
+  font-weight: 500;
+  font-size: 17px;
+}
+
+figure {
+  margin: auto 10px;
+}
+
+.stick {
+  position: absolute;
+  width: 250px;
+  left: 30%;
+  padding: 10px;
+}
 
 
 @media (max-width: 750px) {

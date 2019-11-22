@@ -1,11 +1,11 @@
 import * as d3 from 'd3'
 
-const margin = { top: 50, left: 20, right: 20, bottom: 20 }
+const margin = { top: 100, left: 20, right: 20, bottom: 20 }
 const height = 550 - margin.top - margin.bottom
 const width = 500 - margin.left - margin.right
 
 const svg = d3
-  .select('#DecadesInPlaylists')
+  .select('#radial-chart')
   .append('svg')
   .attr('height', height + margin.top + margin.bottom)
   .attr('width', width + margin.left + margin.right)
@@ -252,10 +252,8 @@ function ready([decadeCount, songFeatures]) {
     svg.attr('transform', `translate(${newWidth / 2},${svgHeight / 3})`)
 
     function newRadius() {
-      if (window.innerWidth > 900) {
-        return newWidth / 2
-      } else if (window.innerWidth < 550) {
-        return newWidth / 2.22
+      if (window.innerWidth < 900) {
+        return newWidth / 2.32
       } else {
         return newWidth / 2
       }

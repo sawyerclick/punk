@@ -1,0 +1,425 @@
+,genre,counts
+0,pop punk,321
+2,punk,251
+3,emo,234
+4,anthem emo,226
+5,melodic hardcore,191
+6,alternative emo,185
+7,skate punk,175
+8,screamo,151
+9,post-hardcore,130
+10,ska punk,104
+11,modern rock,92
+12,rock,76
+13,metalcore,69
+14,ska,68
+15,indie punk,66
+16,easycore,65
+17,modern ska punk,60
+18,straight edge,57
+19,canadian punk,56
+20,dreamo,55
+21,hardcore punk,55
+22,alternative rock,53
+23,hardcore,52
+24,garage rock,52
+25,canadian pop punk,51
+26,uk pop punk,51
+27,pop rock,50
+28,psychedelic rock,49
+29,protopunk,48
+30,dance rock,47
+31,pop emo,45
+32,post-punk,44
+33,progressive post-hardcore,44
+34,permanent wave,42
+35,steampunk,41
+36,latincore,41
+37,socal pop punk,40
+38,art rock,39
+39,post-grunge,38
+40,nyhc,38
+41,orgcore,38
+42,pixie,38
+43,horror punk,37
+44,mexican pop punk,37
+45,new wave,36
+46,alternative metal,35
+47,post-screamo,35
+48,indie rock,35
+49,crossover thrash,35
+50,celtic punk,33
+51,neon pop punk,33
+52,riot grrrl,33
+53,psychobilly,33
+54,melodic metalcore,32
+55,dark cabaret,32
+56,dance-punk,32
+57,rockabilly,30
+58,folk punk,29
+59,experimental rock,29
+60,classic rock,25
+61,experimental,24
+62,lo-fi,23
+63,chicago pop punk,23
+64,folk rock,23
+65,noise pop,23
+66,canadian post-hardcore,22
+67,canadian hardcore,22
+68,midwest emo,22
+69,punk blues,21
+70,mathcore,21
+71,classic garage rock,21
+72,celtic rock,20
+73,chaotic hardcore,20
+74,noise rock,20
+75,freakbeat,19
+76,no wave,19
+77,comic,19
+78,emo punk,19
+79,thrash core,18
+80,pub rock,18
+81,canadian rock,17
+82,metallic hardcore,17
+83,philly indie,17
+84,rap rock,16
+85,vegan straight edge,16
+86,math rock,16
+87,fast melodic punk,15
+88,nu metal,15
+89,olympia wa indie,14
+90,uk post-punk,14
+91,diy emo,14
+92,glam rock,14
+93,album rock,13
+94,grunge,13
+95,new jersey indie,13
+96,chicago punk,13
+97,power-pop punk,13
+98,christian metal,12
+99,roots rock,11
+100,beatdown,11
+101,power pop,11
+102,indie garage rock,11
+103,mexican rock,11
+104,dc hardcore,10
+105,garage psych,10
+106,christian rock,10
+107,art pop,9
+108,indie folk,9
+109,folk-pop,9
+110,boston hardcore,9
+111,reggae rock,9
+112,minneapolis punk,9
+113,vancouver punk,9
+114,blues-rock,8
+115,boston rock,8
+116,latin rock,8
+117,alternative pop,8
+118,texas pop punk,8
+119,pirate,7
+120,country rock,7
+121,aussie emo,7
+122,canadian metal,7
+123,toronto indie,7
+124,mexican indie,7
+125,mellow gold,7
+126,fourth world,7
+127,queercore,7
+128,neo mellow,7
+129,oi,7
+130,kent indie,7
+131,canterbury scene,6
+132,funk metal,6
+133,otacore,6
+134,industrial,6
+135,surf music,6
+136,folk,6
+137,lilith,6
+138,gbvfi,6
+139,hard rock,6
+140,german post-hardcore,6
+141,christian hardcore,6
+142,modern alternative rock,6
+143,british invasion,6
+144,tampa indie,6
+145,new rave,6
+146,gothic americana,6
+147,melancholia,6
+148,new jersey punk,6
+149,post-post-hardcore,5
+150,new romantic,5
+151,candy pop,5
+152,ontario indie,5
+153,north carolina emo,5
+154,heartland rock,5
+155,singer-songwriter,5
+156,jangle pop,5
+157,anti-folk,5
+158,grand rapids indie,5
+159,piano rock,5
+160,swedish hardcore,5
+161,brill building pop,5
+162,ska mexicano,5
+163,zolo,5
+164,deep melodic metalcore,5
+165,gypsy punk,5
+166,virginia punk,5
+167,garage punk,5
+168,post-teen pop,5
+169,traditional ska,5
+170,alternative dance,4
+171,soft rock,4
+172,reggae fusion,4
+173,christian punk,4
+174,dream pop,4
+175,russian punk,4
+176,rock-and-roll,4
+177,ottawa indie,4
+178,omaha indie,4
+179,latin alternative,4
+180,la indie,4
+181,slow core,4
+182,manitoba indie,4
+183,australian garage punk,4
+184,indie pop,4
+185,deathcore,4
+186,groove metal,4
+187,chamber psych,4
+188,madchester,4
+189,classic uk pop,4
+190,freak folk,4
+191,nu gaze,4
+192,bow pop,4
+193,garage pop,4
+194,dutch punk,4
+195,boston punk,4
+196,industrial rock,4
+197,alabama metal,4
+198,uk post-hardcore,4
+199,east coast reggae,4
+200,old school thrash,4
+201,kc indie,4
+202,sacramento indie,4
+203,swansea indie,3
+204,traditional folk,3
+205,j-poprock,3
+206,belgian indie rock,3
+207,chamber pop,3
+208,cello,3
+209,southeast asian post-rock,3
+210,swedish post-hardcore,3
+211,funk rock,3
+212,trancecore,3
+213,new wave pop,3
+214,australian post-hardcore,3
+215,psychedelic blues-rock,3
+216,baja indie,3
+217,chicago hardcore,3
+218,boston indie,3
+219,electronicore,3
+220,synthpop,3
+221,gaian doom,3
+222,albany ny indie,3
+223,crust punk,3
+224,ska revival,3
+225,neue deutsche harte,3
+226,electropop,3
+227,australian metalcore,3
+228,belgian metal,3
+229,neo-psychedelic,3
+230,metal,3
+231,electro swing,3
+232,belgian indie,3
+233,rock alternatif francais,3
+234,kentucky metal,3
+235,emocore,3
+236,texas punk,3
+237,canadian indie,3
+238,rva indie,3
+239,medieval rock,3
+240,slayer,3
+241,pop,3
+242,symphonic rock,2
+243,australian ska,2
+244,hamilton on indie,2
+245,uk diy punk,2
+246,english indie rock,2
+247,grunge pop,2
+248,outsider,2
+249,german metalcore,2
+250,cosmic american,2
+251,southampton indie,2
+252,wyoming indie,2
+253,australian hardcore,2
+254,missouri indie,2
+255,orlando indie,2
+256,rap metal,2
+257,electroclash,2
+258,hungarian rock,2
+259,jacksonville indie,2
+260,thrash metal,2
+261,space rock,2
+262,anarcho-punk,2
+263,swedish alternative rock,2
+264,san diego indie,2
+265,twee pop,2
+266,progressive rock,2
+267,indie surf,2
+268,rap,2
+269,western mass indie,2
+270,australian rock,2
+271,screamocore,2
+272,canadian celtic,2
+273,guadalajara indie,2
+274,post-rock,2
+275,latin arena pop,2
+276,umea indie,2
+277,nederpop,2
+278,medieval folk,2
+279,london on indie,2
+280,milwaukee indie,2
+281,indiana indie,2
+282,deathgrass,2
+283,rock en espanol,2
+284,baroque pop,2
+285,bubblegum pop,2
+286,hungarian punk,2
+287,hip hop,2
+288,swedish indie rock,2
+289,krautrock,2
+290,crack rock steady,2
+291,rhode island indie,2
+292,chilean indie,2
+293,trip hop,2
+294,chicago indie,2
+295,cincinnati indie,2
+296,nintendocore,2
+297,vancouver indie,2
+298,jazz metal,1
+299,ok indie,1
+300,punk ska,1
+301,miami hip hop,1
+302,east coast hip hop,1
+303,bay area indie,1
+304,uk metalcore,1
+305,sinaloa indie,1
+306,minimal,1
+307,canadian pop,1
+308,alternative country,1
+309,german punk,1
+310,adelaide indie,1
+311,newcastle nsw indie,1
+312,j-punk,1
+313,swing,1
+314,brass band,1
+315,traditional country,1
+316,instrumental post-rock,1
+317,speed metal,1
+318,virginia metal,1
+319,hampton roads indie,1
+320,icelandic rock,1
+321,drill,1
+322,british blues,1
+323,argentine punk,1
+324,compositional ambient,1
+325,djent,1
+326,rhythm and blues,1
+327,isle of wight indie,1
+328,oakland indie,1
+329,gothic rock,1
+330,el paso indie,1
+331,instrumental rock,1
+332,nu jazz,1
+333,merseybeat,1
+334,miami indie,1
+335,math rock latinoamericano,1
+336,okc indie,1
+337,birmingham metal,1
+338,song poem,1
+339,soul,1
+340,norwegian rock,1
+341,escape room,1
+342,deep psychobilly,1
+343,country gospel,1
+344,czech punk,1
+345,shiver pop,1
+346,electronic,1
+347,industrial metal,1
+348,leeds indie,1
+349,alternative roots rock,1
+350,italian post punk,1
+351,american post-rock,1
+352,latin,1
+353,drone,1
+354,connecticut indie,1
+355,canadian shoegaze,1
+356,columbus ohio indie,1
+357,norwegian alternative rock,1
+358,christian alternative rock,1
+359,street band,1
+360,london indie,1
+361,progressive deathcore,1
+362,noise punk,1
+363,country,1
+364,mexican hardcore,1
+365,indy indie,1
+366,latin ska,1
+367,progressive metalcore,1
+368,nerdcore,1
+369,indie poptimism,1
+370,native american,1
+371,etherpop,1
+372,dark post-punk,1
+373,deep metalcore,1
+374,garage punk blues,1
+375,arkansas indie,1
+376,cowpunk,1
+377,cleveland indie,1
+378,cowboy western,1
+379,manchester indie,1
+380,italogaze,1
+381,uk doom metal,1
+382,old school hip hop,1
+383,stoner rock,1
+384,modern hard rock,1
+385,dark trap,1
+386,outlaw country,1
+387,oslo indie,1
+388,australian alternative rock,1
+389,tulsa indie,1
+390,glam metal,1
+391,latin pop,1
+392,traditional swing,1
+393,brisbane indie,1
+394,small room,1
+395,edmonton indie,1
+396,warrington indie,1
+397,uk beatdown,1
+398,russian indie,1
+399,instrumental math rock,1
+400,trap music,1
+401,zurich indie,1
+402,math pop,1
+403,nu-metalcore,1
+404,gymcore,1
+405,canadian folk,1
+406,shanty,1
+407,cdmx indie,1
+408,scottish indie,1
+409,nashville sound,1
+410,christian music,1
+411,rochester ny indie,1
+412,west virginia indie,1
+413,argentine hardcore,1
+414,irish folk,1
+415,slam poetry,1
+416,canadian metalcore,1
+417,indietronica,1
+418,british post-rock,1
+419,australian indie,1
+420,canadian ccm,1
+421,ambient,1
+422,underground hip hop,1
+423,geek rock,1
+424,dusseldorf electronic,1
