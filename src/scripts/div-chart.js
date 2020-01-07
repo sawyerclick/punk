@@ -75,36 +75,20 @@ function ready(datapoints) {
   //   d3.select(this).style('background', '#C7493A')
   // })
 
-  // d3.select('#pop-punk').on('stepin', function(d) {
-  //   d3.selectAll('.poppunk').style('background-color', 'white')
-  // })
-  const annotations = [
-    {
-      note: {
-        label: 'Here is the annotation label',
-        title: 'Annotation title',
-        align: 'middle', // try right or left
-        wrap: 200, // try something smaller to see text split in several lines
-        padding: 10 // More = text lower
-      },
-      color: ['white'],
-      x: 160,
-      y: 160,
-      dy: 100,
-      dx: 100
-    }
-  ]
+  d3.select('.poppunk')
+    .append('text')
+    .text(
+      'Pop punk is the most popular genre among the songs in the playlists, above even punk itself'
+    )
+    .attr('id', 'step-poppunk')
+    .style('color', 'white')
+    .style('position', 'absolute')
+    .style('width', '50%')
+    .style('padding', '0 10%')
 
-  // Add annotation to the chart
-  const makeAnnotations = d3Annotation
-    .annotation()
-    .accessors({
-      x: 20,
-      y: 20
-    })
-    .annotations(annotations)
-
-  // group.call(makeAnnotations)
+  d3.select('#step-poppunk').on('stepin', function(d) {
+    d3.selectAll('.poppunk').style('background-color', 'white')
+  })
 
   // group
   //   .append('text')

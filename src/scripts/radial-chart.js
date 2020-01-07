@@ -1,4 +1,7 @@
 import * as d3 from 'd3'
+import d3Tip from 'd3-tip'
+import d3Annotation from 'd3-svg-annotation'
+d3.tip = d3Tip
 
 const margin = { top: 100, left: 20, right: 20, bottom: 20 }
 const height = 550 - margin.top - margin.bottom

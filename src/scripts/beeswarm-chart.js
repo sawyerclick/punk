@@ -117,12 +117,10 @@ function ready(datapoints) {
         .text('')
         .append()
         .text(d.artist_name)
-        .style('font-family', 'Open Sans')
       d3.select('.songbox .song')
         .text('')
         .append()
         .text(d.song_name)
-        .style('font-family', 'Open Sans')
       svg.selectAll('.id-' + d.id).attr('r', 15)
     })
     .on('mouseout', function() {

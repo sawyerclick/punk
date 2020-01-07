@@ -70,6 +70,13 @@ body {
   margin: 0 auto;
 }
 
+.note {
+  background: rgb(59, 44, 44);
+  width: 100%;
+  padding: 10px;
+  margin: auto auto;
+}
+
 svg {
   background: transparent;
   /* display: block; */
@@ -691,6 +698,7 @@ div.container-full > div.control {
 .songbox {
   /* position: flex; */
   /* float: middle; */
+  font-family: 'Open Sans', sans-serif;
   display: block;
   padding-right: 15px;
   color: #111111;
@@ -736,7 +744,7 @@ div.container-full > div.control {
 }
 
 #div-chart {
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   align-items: flex-end;
   position: static;
@@ -758,8 +766,8 @@ div.container-full > div.control {
 }
 
 .div-block {
-  width: 10px;
-  height: 10px;
+  width: 3px;
+  height: 3px;
   margin: 2px;
   /* border-radius: 50%; */
   background-color: #fe4a49;
